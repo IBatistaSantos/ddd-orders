@@ -32,6 +32,19 @@ describe('Customer', () => {
     expect(customer.isActive()).toBeFalsy();
   })
 
+  it('should add reward points', () => {
+    const customer = new Customer('1', 'John Doe');
+    expect(customer.rewardPoints).toBe(0)
+
+    customer.addRewardPoints(100);
+    expect(customer.rewardPoints).toBe(100);
+
+    customer.addRewardPoints(200);
+    expect(customer.rewardPoints).toBe(300);
+  })
+
+
+
   it('should throw error when name is invalid', () => {
     expect(() => new Customer('1', 'John')).toThrow('Name must be at least 5 characters long');
   })
