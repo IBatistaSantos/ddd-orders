@@ -23,4 +23,16 @@ export class OrderItem {
   get quantity() {
     return this._quantity;
   }
+
+  get productId() {
+    return this._productId;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get id() {
+    return this._id;
+  }
 }
