@@ -31,6 +31,10 @@ export class Customer {
     return this._rewardPoints;
   }
 
+  get address() {
+    return this._address;
+  }
+
   changeName(newName: string) {
     this._name = newName;
     this.validate();
