@@ -14,12 +14,30 @@ export class Order {
     this.validate();
   }
 
+  get id(): string {
+    return this._id;
+  }
+
+  get customerId(): string {
+    return this._customerId;
+  }
+
   getTotal() {
     return this._total;
   }
 
+  get items() {
+    return this._items;
+  }
+
   total(): number {
     return this._items.reduce((acc, item) => acc + item.price(), 0);
+  }
+
+  addItem(item: OrderItem) {
+    this._items.push(item);
+    this._total = this.total();
+    this.validate();
   }
 
   validate() {
