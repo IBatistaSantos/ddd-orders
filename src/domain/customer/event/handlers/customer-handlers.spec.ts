@@ -31,7 +31,7 @@ it ('should notify handlers for customer context', () => {
 
 it ('should notify handlers when address is updated', () => {
   const eventDispatcher = new EventDispatcher();
-  const eventHandler = new DisplayConsoleLogWhenCustomerIsCreatedHandler();
+  const eventHandler = new SendMailWhenAddressUpdatedCustomerHandler();
 
   eventDispatcher.register(AddressUpdatedEvent.name, eventHandler);
 
